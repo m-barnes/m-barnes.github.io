@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap Core CSS -->
+      <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+      <link href="css/custom.css" rel="stylesheet">
+    <!--jquery -->
+      <script type="text/javascript" src="js/jquery.js"></script>
+  </head>
+  <body>
+    <header>
+      <!--back arrow and title with fixed position-->
+      <div class="col-md-12 header navbar navbar-default navbar-fixed-top">
+          <div class="col-md-10"><a href="javascript:history.back(1)">&#129104;</a>
+          <a href="index.html">Frontend Programming</a></div>
+          </div>
+          <div class="languages">
+            <div class="col-md-4 html">&#60;&nbsp;&#8725;&nbsp;&#62;&nbsp;html</div>
+            <div class="col-md-4 css">&#123;&nbsp;&nbsp;&#125;&nbsp;css</div>
+          </div>
+    </header>
+    <main class="col-md-12 main">
+      <!--back to top button-->
+      <div id="top"><a href="#">Back to Top</a></div>
+      <!--Jump Menu-->
+      <aside class="col-md-4 col-md-push-8 jump">
+        <h4>In this lesson</h4>
+        <hr />
+        <h5>Objectives</h5>
+              <ul>
+                <li>Objective 1</li>
+                <li>Objective 2</li>
+                <li>Objective 3</li>
+              </ul><hr/>
+        <h5>Terms</h5>
+              <ul>
+                <li><a href="#tags">Tags</a></li>
+                <li><a href="#elements">Elements</a></li>
+                <li><a href="#attributes">Attributes</a></li>
+              </ul><hr/>
+        <h5>Concepts</h5>
+              <ul>
+                <li><a href="#dom">Document Object Model</a></li>
+                <li><a href="#html5">HTML5</a></li>
+                <li><a href="#blockInline">Block and Inline</a></li>
+              </ul>
+        </aside>
+        <article class="col-md-8 col-md-pull-4 padding2rem">
+          <h1>Lesson 1</h1>
+          <h2>Mobile First</h2>
+          <p>Web development has come an extremely long way in a phenomenally short time. In the beginning times if you wanted to build a website, you just had to know HTML. Forms and the like required a little bit of PHP or--if you were feeling particularly adventurous--JavaScript. As time has moved on, however, it's gotten incredibly complex with the introduction of derivative languages like XML and XHTML, an ever expansive and maturing JavaScript, and a whole host of 'new' back end languages like Python, Ruby, Perl, etc. that enhance server side support for developers. Not to mention the multitude of different devices, platforms, and mediums that web designers and developers are responsible for these days.</p>
+          <p>With complexity brings new tools to help make the complex simple and, consequently, you have a whole host of point-and-click environments out there where you simply drag-and-drop elements onto a canvas while the environment does all the programming for you behind the scenes. Companies like Wix, Weebly, and SquareSpace have built business models on these tools and content management systems like WordPress have helped make the unmanageable manageable for the masses.</p>
+  			</article>
+      </main>
+      <script>
+        (function($) {
+        $(document).ready(function(){
+
+            //When distance from top = 250px fade button in/out
+            $(window).scroll(function(){
+                if ($(this).scrollTop() > 250) {
+                    $('#top').fadeIn(300);
+                } else {
+                    $('#top').fadeOut(300);
+                }
+            });
+        });
+        })(jQuery);
+      </script>
+  </body>
+</html>

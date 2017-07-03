@@ -1,0 +1,181 @@
+/*top level*/
+
+
+article a::before {
+    display: block;
+    content: " ";
+    margin-top: -70px;
+    height: 70px;
+    visibility: hidden;
+}
+a :hover {
+  text-decoration:none;
+}
+ body {
+    background-image:url("../images/sayagata.png");
+ }
+
+ h1, h2, h3, h4, h5, h6{
+   font-family:"open sans";
+ }
+
+ h1, h4 {
+ 	color:#88CBCE;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+hr {
+  height: 1px;
+  background-color:#88CBCE;
+}
+
+ img {
+   width:100%;
+ }
+
+ pre {
+     white-space: pre-wrap;       /* Since CSS 2.1 */
+     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+     white-space: -pre-wrap;      /* Opera 4-6 */
+     white-space: -o-pre-wrap;    /* Opera 7 */
+     word-wrap: break-word;       /* Internet Explorer 5.5+ */
+ 	word-break:keep-all;
+ 	}
+
+ table {
+    min-width:100%;
+ }
+
+/*styled classes*/
+.attribute {
+  color:#0000CC;
+}
+
+.centered {
+	 display:block;
+	 margin-left:auto;
+	 margin-right:auto;
+ }
+
+ .greenText {
+	 color: #27AE60;
+   font-weight:bold;
+ }
+
+/*area specific CSS */
+.indexMenu {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+
+.indexMenu a {
+  color:#fff;
+}
+
+.indexMenu li {
+  margin-top:4rem;
+}
+
+.indexMenu ul {
+  list-style:none;
+}
+
+.main {
+    background-color:#EFF5F9;
+    margin-top:1rem;
+    color:#424242;
+
+}
+
+.jump {
+  margin-top: 4rem;
+
+}
+
+.padding2rem {
+  padding:2rem;
+}
+
+
+
+/*header*/
+.header {
+  display:inline-flex;
+  background-color:#69D2E7;
+  font-family:"open sans";
+  color:#fff;
+
+
+}
+
+.header a {
+  margin-right:2rem;
+  font-size:xx-large;
+  color:#fff;
+}
+
+
+
+.languages {
+  margin-top:5rem;
+}
+
+.html {
+  font-size: x-large;
+  background-color:#34495e;
+  padding:1rem;
+  color:#fff;
+  opacity:0.8;
+  flex:1;
+}
+
+.css {
+  font-size: x-large;
+  background-color:#9b59b6;
+  padding:1rem;
+  color:#fff;
+  opacity:0.8;
+  flex:1;
+
+}
+
+.js {
+  font-size: x-large;
+  background-color:#f1c40f;
+  padding:1rem;
+  color:#fff;
+  opacity:0.8;
+  flex:1;
+
+}
+
+.misc {
+  font-size: x-large;
+  background-color:#e67e22;
+  padding:1rem;
+  color:#fff;
+  opacity:0.8;
+  flex:1;
+
+}
+
+.logo {
+  font-size:x-large;
+  background-color:#fff;
+  border:2px solid #000;
+  padding:.5rem;
+}
+
+#top {
+  padding:2rem;
+  position:fixed;
+  bottom:0;
+  right:0;
+  display:none;
+}
