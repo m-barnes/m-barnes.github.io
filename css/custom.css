@@ -8,7 +8,7 @@ article a::before {
     height: 70px;
     visibility: hidden;
 }
-a :hover {
+a:hover {
   text-decoration:none;
 }
  body {
