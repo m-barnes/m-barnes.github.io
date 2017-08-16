@@ -134,10 +134,8 @@
           <p>If you look at the dimensions in our example, what is the width of the element? For most of us, we're going to assume 400px. I mean, it's right there on the screen. It clearly says the width of the content is 400px. If I'm laying out the page and I have to fit that particular piece of content on the page, I'm going to account for 400px in my design, right?</p>
           <p>And I would be wrong. Terribly, terribly wrong.</p>
           <p>According to the box model in order to find the actual size of the content as rendered on the page we have to use the following formulas for width and height:
-            <ul>
-              <li><pre>Total Width = margin-right + border-right + padding-right + width + padding-left + border-left + margin-left</pre></li>
-              <li><pre>Total Height = margin-top + border-top + padding-top + height + padding-bottom + border-bottom + margin-bottom</pre></li>
-            </ul>
+              <pre>Total Width = margin-right + border-right + padding-right + width + padding-left + border-left + margin-left</pre>
+              <pre>Total Height = margin-top + border-top + padding-top + height + padding-bottom + border-bottom + margin-bottom</pre>
           <p>This means our 400px x 100px piece of content is actually 492px x 192px when rendered on the page. This presents a bit of a problem if you're trying to squeeze the very last valuable drop of real estate on the page and can't figure out why your content isn't stacking right even though it looks like you've got more than enough room.</p>
           <a name="boxSizing"></a>
           <h4>Box Sizing</h4>

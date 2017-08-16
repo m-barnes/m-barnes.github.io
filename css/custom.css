@@ -1,13 +1,14 @@
 /*top level*/
 
 
-article a::before {
+/*article a::before {
     display: block;
     content: " ";
     margin-top: -70px;
     height: 70px;
     visibility: hidden;
 }
+*/
 a:hover {
   text-decoration:none;
 }
@@ -28,7 +29,7 @@ h4 {
 }
 
 hr {
-  height: 1px;
+  height: .0625rem;
   background-color:#88CBCE;
 }
 
