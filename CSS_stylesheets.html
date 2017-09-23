@@ -203,19 +203,56 @@
             <p>In the meantime, Let's look at some examples.</p>
             <p>Hover or click on each to see a pseudo class in action.
             <hr/>
-            <a href="http://www.google.com">Google</a><hr/>
+            <a href="http://www.google.com" id="Google">Google</a>
+            <p>Using the pseudo class selector :hover I have given this link some padding and a terrible yellow background when a user hovers over it.</p><hr/>
             <div class="classSelect"><h3>Hover for tooltip.</h3><p>This is a link to Google.</p></div><hr/>
 
             <form>
             <label>First Name:</label><br/>
             <input type="text" ></input>
+            <p>This one is a bit more subtle. When the element is selected and pulls focus, a nice blue outline pops up around the text box.</p>
             </form>
-            <br/><hr/>
-
-            <a  class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
-            <a class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Link</a><hr/>
-
-            <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Single toggle</button><hr/>
+            <hr/>
+            <table id="table1">
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Country</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+            </tr>
+            <tr>
+              <td>Ernst Handel</td>
+              <td>Roland Mendel</td>
+              <td>Austria</td>
+            </tr>
+            <tr>
+              <td>Island Trading</td>
+              <td>Helen Bennett</td>
+              <td>UK</td>
+            </tr>
+            <tr>
+              <td>Laughing Bacchus Winecellars</td>
+              <td>Yoshi Tannamuri</td>
+              <td>Canada</td>
+            </tr>
+            <tr>
+              <td>Magazzini Alimentari Riuniti</td>
+              <td>Giovanni Rovelli</td>
+              <td>Italy</td>
+            </tr>
+          </table>
+          <br/>
+          <p>Our table example again.</p>
+          
             <h4>Pseudo elements</h4>
             <p>Pseudo elements are a bit different in that they don't select any 'real' element on the page. :before and :after are the two most common and are used to insert specialized content either before or after a particular element. We'll talk a bit more about them when we talk about layout and positioning, specifically when we talk about floats.</p>
           <a name="precedence"></a>

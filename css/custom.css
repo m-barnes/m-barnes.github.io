@@ -12,6 +12,15 @@
 a:hover {
   text-decoration:none;
 }
+
+#Google:hover {
+  background-color:yellow;
+  padding:.5rem
+}
+#table1 tr:nth-child(even) {
+        background: #ebebeb;
+      }
+
  body {
     background-image:url("../images/sayagata.png");
  }
