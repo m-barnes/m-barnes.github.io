@@ -43,6 +43,10 @@ hr {
   background-color:#88CBCE;
 }
 
+ .img_small {
+   width:auto !important;
+ }
+
  img {
    width:100%;
  }
@@ -84,9 +88,7 @@ hr {
    font-weight:bold;
  }
 
- .img_small {
-   width:auto !important;
- }
+
 
 /*area specific CSS */
 .indexMenu {
