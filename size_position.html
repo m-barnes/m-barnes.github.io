@@ -58,7 +58,7 @@
           <p>Inline-level elements only occupy as much 'space' as they need to display the element. Inline-level elements are meant to draw distinction to the element and sit 'inline' with other elements.</p>
           <p><pre style="display:inline"><span class="greenText">&lt;span&gt;</span></pre> elements are inline-level elements.
           <pre style="display:inline"><span class="greenText">&lt;em&gt;</span></pre> and <pre style="display:inline"><span class="greenText">&lt;strong&gt;</span></pre> elements are inline-level elements.<br/><br/> They're meant to separate or draw particular focus to an element, but not disrupt overall readibility or 'flow.'</p>
-          <a name="display"></a>
+          <a name="display" class="anchor"></a>
           <h4>The Display Property</h4>
           <p>Exactly how these elements are displayed--whether they are block-level, inline-level or...something else (and there are a few other 'something elses')--is determined by the 'display' property. Every element has a default display property value. By default, <em>ALL</em> elements are set as inline-level elements. The default user agent style sheet--the style sheet automatically applied by a browser to web content--overwrites some of those values to turn some elements (e.g. paragraph elements, heading elements, etc.) into block-level elements. Now as big, bad developers who aren't bound by the laws of default values and user agent style sheets, we can change those values as we see fit and display our content in whatever way we want. And while we have quite a few options at our disposal, the most common options are as follows:
             <ul>
@@ -79,7 +79,7 @@
               </li>
               <li>There are a few others, but we're going to hold off on them for now as they deal more with layout and position than size and display.</li>
             </ul>
-          <a name="boxModel"></a>
+          <a name="boxModel" class="anchor"></a>
           <h4>The Box Model</h4>
           <p>According to the box model concept (<a href="https://css-tricks.com/the-css-box-model/">CSS-tricks does a bang-up job explaining it in detail, by the way</a>) every element on the page is a rectangular box that may have width, height, padding, borders, and margins.</p>
           <p><img src="images/boxModel.png" alt="image of the box model"/></p>
@@ -137,7 +137,7 @@
               <pre>Total Width = margin-right + border-right + padding-right + width + padding-left + border-left + margin-left</pre>
               <pre>Total Height = margin-top + border-top + padding-top + height + padding-bottom + border-bottom + margin-bottom</pre>
           <p>This means our 400px x 100px piece of content is actually 492px x 192px when rendered on the page. This presents a bit of a problem if you're trying to squeeze the very last valuable drop of real estate on the page and can't figure out why your content isn't stacking right even though it looks like you've got more than enough room.</p>
-          <a name="boxSizing"></a>
+          <a name="boxSizing" class="anchor"></a>
           <h4>Box Sizing</h4>
           <p>Now, here's the good news.</p>
           <p>Until now the box model has been an additive design. If you set the width of an element, you had to add the padding, borders, and margins on either side to get the actual, full width, as displayed of an element. CSS3--which we're using, yeah?--has introduced the 'box-sizing' property, which allows us to change how the box model works. It looks like this:</p>

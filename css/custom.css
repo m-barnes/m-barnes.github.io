@@ -9,6 +9,7 @@
     visibility: hidden;
 }
 */
+
 a:hover {
   text-decoration:none;
 }
@@ -64,6 +65,14 @@ hr {
   color:#0000CC;
 }
 
+.anchor {
+  display: block;
+  content: " ";
+  margin-top: -70px;
+  height: 70px;
+  visibility: hidden;
+}
+
 .centered {
 	 display:block;
 	 margin-left:auto;
@@ -73,6 +82,10 @@ hr {
  .greenText {
 	 color: #27AE60;
    font-weight:bold;
+ }
+
+ .img_small {
+   width:auto;
  }
 
 /*area specific CSS */

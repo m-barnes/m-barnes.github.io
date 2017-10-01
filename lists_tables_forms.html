@@ -143,7 +143,7 @@
           <p>Most html elements are structure-centric. They are designed to provide the foundations on which you can build and drape all your pretty, pretty content on. Some of them are more useful than others depending on the context and your need as a developer, but all of them have a purpose and that purpose is to provide structure (I'm doing it again, aren't I?). </p>
           <p>This go round we're going to talk about three organizational constructs we can use to organize and display our stuff. They're big ideas and we've got a lot of ground to cover. So, while it's a lot ot trudge through, stick with it and make sure you understand what's going on because--trust me--they're pretty important. Like I've said, each has a purpose, each has a part to play, and with some of them we can use to do some pretty cool stuff.</p>
           <h2>Lists, tables, and forms, oh my!</h2>
-          <a name="lists"></a>
+          <a name="lists" class="anchor"></a>
           <h3>Lists</h3>
           <p>Lists--taken at face value--aren't much to really talk about. Lists are a part of everyday life, yeah? We make 'to-do' lists to plan out our weekends, our GPS app prints out our directions in list form, and recipes are lists of ingredients complete with directions to cook delicious, delicious food stuffs. Lists are everywhere, so, it makes sense that they're everywhere online as well.</p>
           <p>When we want to use a list on our website we have some options. Structurally, we're limited to a handful of different types of lists (e.g. ordered lists, unordered lists, and description lists). We can do some neat stuff when styling them, but--structurally--there's only these. So, before we move too far along, let's take a look at them.</p>
@@ -285,14 +285,14 @@
             </ol>
             <p>A few things to note here, okay? The first is that nesting lists is tricky as unwanted styling can pop up unintentionally if you're not careful, so, mind your opening and closing tags. The second is that as you nest lists--particularly unordered lists--the styles for the markers will change. You might have noticed that the unordered list here is delineated by open circles instead of the solid dots like our previous example. This is because the unordered list is nested <em>within</em> an ordered list. This unordered list is at a different 'level' in the list hierarchy.</p>
             <p>Fortunately, we can control all these default styles with CSS, which is where it becomes particuarly neat for us as developers. I've provided a list of some sample CSS you can throw into or use in conjunction with your code that gives you some styling options. You can find it with our old friend, the <a href="reference.html">reference</a> page. You'll understand it a bit better once we start digging into CSS, but since we're here, I thought I'd go ahead and include it for you.</p>
-            <a name="navigation"></a>
+            <a name="navigation" class="anchor"></a>
             <h4>Useful Utility</h4>
             <p>I mentioned earlier that we can do some neat stuff with generic lists. One of those things has to do with site navigation. We can use lists to create site navigation for our stuff. We just have to do a little bit of manipulation on the CSS side.</p>
             <ul>
               <li>Home</li>
-              <li>News</a></li>
-              <li>Contact</a></li>
-              <li><a href="#about">About</a></li>
+              <li>News</li>
+              <li>Contact</li>
+              <li>About</li>
             </ul>
             <p>Here's a basic unordered list, right? Let's see what we can do with it.</p>
             <p>
@@ -307,8 +307,7 @@
             </p>
             <p>As you can see, we've done some pretty neat stuff using just a basic list and some CSS. We haven't changed the structure of the unordered list. The html for both examples is the same. The changes in how it's being displayed are being handled via CSS. We've stacked the list items side by side on the line, gave each list item a background color, removed any extra spacing, and gave it something neat to do when a mouse is hovered over them on the page.</p>
             <p>You'll learn how to do stuff like this when we talk about CSS over the next few lessons, but--for now--the point of the example was simply to show you that while there are rules and guidelines in how to use these structural html elements, there is a bit of flexibility in their use which we can use to our advantage when creating content for our pages.</p>
-
-            <a name="tables"></a>
+            <a name="tables" class="anchor"></a>
             <h2>Tables</h2>
             <p>Tables used to be <em>the</em> thing when building websites back in the day. There has always been a need to be able to organize tabular data--stuff that would look good in a table--on the internet, but they're also pretty good at managing and organizing data of all kinds. Unruly photo collages, misbehaving text, wandering menus, etc. were all powerless in the face of the all-powerful table and, so, tables started popping up in code...everywhere.</p>
             <p>In the beginning, this was all right because developers were dealing with some simple and pretty fixed variables as far as design and display were concerned. Even as websites started to get more and more complex and user demand drove the need for more sophisticated design and functionalty, tables were still pretty useful. All kinds of design styles and attributes (e.g. 'colspan,' 'rowspan,' size percentages, nested tables, etc.) were being used heavily in development.</p>
@@ -330,7 +329,7 @@
             <p><strong style="color:red;">Tables should not be used as layout aids.</strong></p>
             <p>So, there you go. Tables are still perfectly acceptable for displaying tabular data, by the way. Feel free to use them for data that ‘naturally,’ belongs in grids (e.g. charts, some lists, inventories, etc.), but--and I feel this is important to mention--you shouldn’t use them for layout purposes. If you need to wrangle non-tabular content, There are other means. Sometimes using those means is a bit more difficult, but walk the path, Padwan, and you'll be better off further on down the road.</p>
             <p>Tables are for data that naturally fits into columns and rows. Html5 has a number of elements available for defining and providing structure to the data. Like our lists example, we're going to take look at some basic html code for tables, build on it a bit, and then make it shine using some CSS.</p>
-            <a name="foundations"></a>
+            <a name="foundations"class="anchor"></a>
             <h4>Building Tables</h4>
             <p>First, let's build the foundation.</p>
             <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;table&gt;</span>
@@ -588,7 +587,7 @@
             </table><br/>
             <p>Just like with our lists example, both of these tables have been built using the same html foundations. My examples aren't that drastically different (I mean, how creative can you get with order confirmations?), but they illustrate the point, yeah? Dress it up how you like, but it means nothing if your framework is lacking. Foundations are important.</p>
 
-            <a name="forms"></a>
+            <a name="forms" class="anchor"></a>
             <h2>Forms</h2>
             <p>Last, but not least, we have forms.</p>
             <p>Forms are an essential and ubiquitous part of the internet these days. As developers we use them for all kinds of things from capturing data from users (sign up here!), to processing requests (I'm feeling lucky.), to controlling application function and access (Username and password, please.). If there is interactive functionality built into a website, however, small that functionality might be, chances are it's been framed out using form elements.</p>
@@ -606,7 +605,7 @@
               <p>GET requests are primitive. The only real way for data to pass via a GET request is through the url, which provides a very, very limited amount of space in which to pass data. Consequently, GET requests should really only be used for retrieval of simple, non-sensitive information like when querying a search engine or requesting a url or whatever. Developers like to say that GET requests should be idempotent (because it makes us look wicked smart), meaning you could do it a million times and the server will do the same basic action and return the same basic results <em>each and every time</em>. Google uses a GET request because your search keywords aren't considered sensitive information and even though the results themselves may differ, the action to return those results is exactly the same. A rose is a rose is a rose regardless of where it blooms.
               <p>Using the 'GET' method means I--as a developer--can do more stuff with that data, but it comes at the expense of privacy, so, it might not be a good idea to use it on a form asking for sensitive personal information like credit card information or a medical history. Not that you could, but you get the point, right?</p>
               <p>POST - A 'POST' method request is a bit different. It works the same--for the most part--but the data isn't sent via the url, but in body of the request (a GET request has no body). This means there is exponentially more space available to send data back and forth between client and server (e.g. account creation forms, records requests from databases, etc.). An additional benefit is that--because the data is sent via the body of the request--the data can be encoded, encrypted, or otherwise obfuscated to ensure that should that information get into the hands of the bad guys, those bad guys can't really do a whole lot with it. The data sent via a POST request isn't appended on to the url, it isn't cached by the browser (unless you specifically tell your browser to do it in the name of convenience), and your data isn't saved to some server log somewhere at the time of transaction. If you've ever filled out a form, hit the back button, and gotten that little box asking you to confirm resubmission, you're dealing with a form that uses a POST request. Unless you specifically authorize it to do so, your browser will only save the data from your submission until the browser is closed out and only on <em>your</em> side. The record of your transaction may exist (Yes, I can confirm that Bob was here and told me some stuff), but the contents of that transaction will not exist beyond the time it takes to complete that transaction (No, I have no idea what we talked about).</p>
-              <a name="createforms"></a>
+              <a name="createforms" class="anchor"></a>
               <h4>Creating Forms</h4>
               <p>Now that I've bored you to tears with all this, let's talk about actually creating some forms using some of this stuff.</p>
               <p>We've got our <span class="greenText">&lt;form&gt;</span> opening and closing tag, we know where we want to send the data we're going to collect, we know what method we're going to use to send it, so, let's actually collect some stinking data.</p>

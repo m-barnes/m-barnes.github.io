@@ -86,17 +86,17 @@
   							<li><em>Attributes</em></li>
               </ul>
             </p>
-					<a name="tags"></a>
+					<a name="tags" class="anchor"></a>
 					<h4>Tags</h4>
 						<p>This is where it gets a bit confusing for some, but stick with it and it'll all make sense in the end. I promise.</p>
 						<p>Looking at some of the code above, you may have noticed a few things. The first thing is that there are an awful lot of brackets going on up there, right? Structure is defined using elements, which we'll talk about in a minute, but the brackets themselves indicate tags. An opening <span class="greenText">&lt; &gt;</span>and a closing <span class="greenText">&lt; / &gt;</span> tag define the area of influence or scope of the effect of an element. Tags are like prison guards. They keep the inside stuff inside and the outside stuff outside. Some tags need both an explicit opening and closing tag in pairs like <span class="greenText">&lt;body&gt; &lt;/body&gt;</span> and some are considered empty or void and are a combination opening and closing tag in one <span class="greenText">&lt;br/&gt;</span> </p>
-					<a name="elements"></a>
+					<a name="elements" class="anchor"></a>
 					<h4>Elements</h4>
 						<p>Elements are designators that define the structure and content of objects within a page. This is the stuff inside the brackets. Some of the more frequently used elements include multiple levels of headings (identified as <span class="greenText">&lt;h1&gt;</span> through <span class="greenText">&lt;h6&gt;</span> elements) and paragraphs (identified as the <span class="greenText">&lt;p&gt;</span> element), which I've already mentioned, but the list goes on to include the <span class="greenText">&lt;a&gt;</span> (for links), <span class="greenText">&lt;div&gt;</span> (for defining sections), <span class="greenText">&lt;span&gt;</span> (chunks of text, usually), <span class="greenText">&lt;strong&gt;</span> (bold text), and <span class="greenText">&lt;em&gt;</span> (italic text) elements, and many more.</p>
 						<p>Elements are identified by the use of less-than and greater-than angle brackets, or tags, <span class="greenText">&lt; &gt;</span>, surrounding the element name <em>and sometimes</em> the content inside the scope of those tags.</p>
 						<p>So, when we refer to elements we might be referring to the type of element specfied like <span class="greenText">&lt;h1&gt;</span> or we might be referring to the whole kit and kaboodle <span class="greenText">&lt;h1&gt;</span>An H1 Heading<span class="greenText">&lt;/h1&gt;.</span></p>
 						<p>As if that wasn't confusing enough developers also tend to use the terms tag and element interchangeably. I've been known to do it myself from time to time, yeah? The point is that while it's important you understand the distinction, don't worry about getting too bogged down in the semantics of all this business as there are definitely bigger things to worry about.</p>
-					<a name="attributes"></a>
+					<a name="attributes" class="anchor"></a>
 					<h4>Attributes</h4>
 						<p>This one is easier to wrap your head around. Elements define structure, but sometimes structure just isn't enough and we need those elements to have a little bit of function as well.</p>
 						<p>For instance, a link. The ability to link information together in an easy and intuitive way is one of the most powerful features of the internet. Way back in the days of yore before the internet, books were our primary sources for information (they're still a very important resource in modern times, but you get my meaning). If I wanted to find out about the Protestant Reformation, I had to find a book that had that information in it and even then the totality of information in that book might not be complete or cover all of the different related subjects you might subsequently be interested in along the way. To supplement your research you had to find other books with other information in it, which required a trip to the library or a bookstore and endless hours shuffling through content to find that for which you were looking. Sometimes you got lucky and sometimes it was a fool's errand.</p>
@@ -112,7 +112,7 @@
 					<h5>Putting it together</h5>
 						<img src="images/elementExample.png" alt="example of image HTML" class="centered"/>
 					<h3>HTML Concepts</h3>
-					<a name="dom"></a>
+					<a name="dom" class="anchor"></a>
 					<h4>Document Object Model</h4>
 <pre style="margin: 0; line-height: 125%"><span style="color: #557799">&lt;!DOCTYPE html&gt;</span>
 <span style="color: #007700">&lt;html</span> <span style="color: #0000CC">lang=</span><span style="background-color: #fff0f0">&quot;en&quot;</span><span style="color: #007700">&gt;</span>
@@ -134,11 +134,11 @@
 						<p>As you can see in the representative example, every bit of html code is parsed out and displayed in the hierarchy. Some have a parent / child relationship like <span class="greenText">&lt;head&gt;</span> and <span class="greenText">&lt;title&gt;</span> elements, some have sibling relationships like <span class="greenText">&lt;head&gt;</span> and <span class="greenText">&lt;body&gt;</span> and some nodes are considered extensions of elements like the attribute 'href' to the <span class="greenText">&lt;a&gt;</span> element.</p>
 						<p>If you were to look at this in-situ, you might not notice a whole lot of difference between it and the html code itself, especially if that html code is properly indented and well formatted. However, not all code is created equal and so a DOM is created at execution to ensure a platform and language indifferent standard that everyone can use whether it's another frontend developer, a web designer, a backend programmer, or whomever.</p>
 						<p>The purpose--at least for us as frontend developers--is it provides us a way to manipulate the styling of the content via CSS (Cascading Style Sheets) or to make elements interactive via JavaScript, both of which we'll talk about in detail as we go on.</p>
-					<a name="html5"></a>
+					<a name="html5" class="anchor"></a>
 					<h4>HTML5</h4>
 						<p>HTML5 is the new hotness and brings with it a whole host of new stuff. The older standards have a lot of generic structural elements with the most egregious offender being <span class="greenText">&lt;div&gt;</span> for 'division.' You can certainly still use <span class="greenText">&lt;div&gt;</span> (if you look at the source code for this site, I use it liberally in some cases), but with HTML5 there are some better alternatives. HTML5 introduced a lot of new 'semantic' elements. This means that there are now elements with names like <span class="greenText">&lt;nav&gt;</span> (for navigation), <span class="greenText">&lt;main&gt;</span> (for main content),<span class="greenText"> &lt;aside&gt;</span> (for additional content outside the purview of the main content), etc. that more accurately describe the content housed in those elements. Navigation menu content can still be placed inside <span class="greenText">&lt;div&gt;</span> elements, but with the new standards they are more appropriately located inside <span class="greenText">&lt;nav&gt;</span> elements.</p>
 						<p>HTML5 also brings with it a bunch of new elements specifically for things like embedding outside content (<span class="greenText">&lt;embed&gt;</span>), including video and audio content (<span class="greenText">&lt;video&gt;</span>, <span class="greenText">&lt;audio&gt;</span>), and for form inputs like <span class="greenText">&lt;email&gt;</span>, <span class="greenText">&lt;tel&gt;</span>, <span class="greenText">&lt;time&gt;</span>, etc.</p>
-					<a name="blockInline"></a>
+					<a name="blockInline" class="anchor"></a>
 					<h4>Block and Inline Elements</h4>
 					<p>Last, but not least we need to talk about block and inline elements. We're definitely going to cover this more when we talk of the box model, but for now, let's keep it simple.</p>
 					<p>Elements on the page are naturally displayed in one of three ways
