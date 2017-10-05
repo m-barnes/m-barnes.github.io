@@ -56,7 +56,7 @@
           <p>In the past, this was insanely difficult because we were forced to use these adapted, ad-hoc methods in ways they were never meant to be used in an effort to control content. The results were fine, but as time as passed we've discovered that they are, largely, incapable and inadequate in the face of controlling content in the modern development landscape.</p>
           <p>While controlling content can still be quite difficult, we do have a few new tricks up our sleeves.</p>
           <h2>Like water for content</h2>
-          <h4>Responsive Design</h4>
+          <h3>Responsive Design</h3>
           <p>The dominant approach in modern web design to combat these issues is known as 'responsive design.' Users today have a myriad of choices in how they view web content--different web browsers, different screen sizes with different capabilities, etc. The idea is to build one website and then provide support for that one website across as many devices as possible, meeting the established standard for content, design, and performance to ensure overall usability and user satistfaction.</p>
           <p>To help with this--and because I like tortured analogies--you should think of content like water.</p>
           <p><img src="images/content_like_water.jpg" alt="Image of water filling various containers"/></p>
@@ -94,6 +94,62 @@
             <p>When we apply that rule to our donut, we get this:</p>
             <p><img src="images/donut.png" class="img_small" alt="image of a chocolate covered donut"/></p>
             <p>Our donut retains its original size and all is right with the world again.</p>
+            <h4>Relative sizing</h4>
+            <p>I mentioned above that relative sizing was a key principle of responsive design, so, without further adieu, let's define what that means and then run through a brief list of examples.</p>
+            <p>Pixels, picas, and points (along with some others that don't start with the letter 'p') fall into the category of absolute lengths or sizes. They are a fixed value and elements expressed using these absolute values will appear exactly to the size specified regardless of other considerations or context. By and large you should avoid absolute sizing of any kind when you can. Again, you don't know how your user is going to be viewing your content and, consequently, using absolute values can lead to unintended effects that can break your layout. Additionally, there is an accessibility issue in the context of those with vision impairments. If they cannot effectively or easily resize elements on your site, it is--as far as they are concerned--unusable.</p>
+            <p>The more responsive approach is to use elements with relative sizing. Elements that use relative sizing are scaled relative to some other value and will resize too. For instance, most modern browsers will set the default font size at 16px, so, relative sizing units are typically sized relative to that value. If the user decides to override this value and set their font size to 20px, then all elements sized using relative values will scale as well. Your site will resize accordingly, look great, and you didn't have to do a thing.</p>
+            <p>There are several different options as far as relative sizing goes and while there are some 'guidelines' as to their use, it really is just a matter of personal preference based on your design intention. I'll mention just a few of the more common ones.</p>
+            <p>
+              <ul>
+                <li>% (percentages) - just like it sounds. An element whose sizing is set to a percentage will take up that percentage of <em>width</em> of the parent element. A <span class="greenText">&lt;div&rt;</span> element with sizing set to 50% will take up exactly half the width of the element in which it is contained. Percentages do not work with height.</li>
+                <li>em - relative to the font-size of the element, which means you have to consider inheritance, right? Setting your size to 2em means your sizing will be 2x the size of the current font.</li>
+                <li>rem - same thing, but relative to the font-size of the root element.</li>
+                <li>vw - relative to 1% of the width of the viewport (the browser window).</li>
+                <li>vh - relative to 1% of the height of the viewport (the browser window).</li>
+              </ul>
+            </p>
+            <p>All of the relative size metrics mentioned above have total support in most modern browsers (and most legacy browsers), including Chrome, IE, Edge, Safari, Opera, and Firefox.</p>
+            <p>The common consensus--at least this week--among developers is that you should use rem for all your sizing and spacing <em>unless</em> you're using media queries as the use of rems will break layout when the user forces the browser to 'zoom.' Personally, I don't use media queries a whole lot, so, I just slap rems on everything and call it done. Again, your mileage may vary based on your preferences.</p>
+            <h4>Media queries</h4>
+            <p>Speaking of media queries...</p>
+            <p>I keep beating this poor dead horse, but, again, you don't know how others are going to be viewing your content. Media queries are useful for helping to organize and layout content based on different device archetypes (screen vs. print, the width of the browser viewport, mobile vs. desktop, etc.). On larger screens you have some room with which to work and, consequently, you might want to add additional features and/or functionality to your site. Additional features and/or functionality that just don't work on devices with smaller screens. You might also want to have a different design or layout depending on device orientation (e.g. portrait or landscape).  Interactive elements typically don't 'print' all that well, so, it might be a good idea to have a separate print-centric design that excises those elements from the page before it's sent to a printer.</p>
+            <p>The @media rule only applies a certain block of CSS properties if a certain condition is true.</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">@media</span> <span style="color: #007700">only</span> <span style="color: #007700">screen</span> <span style="color: #007700">and</span> <span style="color: #333333">(</span><span style="color: #007700">max-width</span><span style="color: #333333">:</span> <span style="color: #007700">500px</span><span style="color: #333333">)</span> {
+    <span style="color: #007700">body</span> {
+        <span style="color: #008800; font-weight: bold">background-color</span><span style="color: #333333">:</span> <span style="color: #007020">lightblue</span>;
+    }
+}
+</pre></p>
+            <p>This media query only applies if the content is viewed on a digital screen with a max-width of 500px. If the screen (browser window) is smaller than that, the background will turn a noxious shade of light blue.</p>
+            <p>That value of 500px is an example of a 'breakpoint.' It is the fulcrum on which our CSS property pivots, right? If the screen is less than 500px, the background is light blue. If it's larger than 500px, the background is the default color (usually white).</p>
+            <p>Breakpoints are often used in reference to screen sizes (desktop screen sizes vs. mobile screen sizes) where content is shifted around and displayed differently according to minimum/maximum window width, but it can refer to any point, or requirement, in the design where the layout or overall functionality is altered from the original design prototype (light themes vs. dark themes, javascript or no javascript, etc.).</p>
+            <h4>Viewport</h4>
+            <p>The viewport refers the user's visible area of a webpage and it varies according to device.</p>
+            <p>If you've ever seen anything like this....</p>
+            <p><img src="images/viewport.jpg" alt="image one screen on two devices with different viewport rules"/>
+            <figcaption><a href="https://www.flickr.com/photos/myassignmenthelp/17541746243">"Mobile Optimized Website View"</a> by <a href="https://www.flickr.com/photos/myassignmenthelp//">Emma Welth</a> licensed under <a href="https://creativecommons.org/licenses/by/2.0/">CC by 2.0</a></p>
+            <p>This is how a site without a viewport attribute looks. The content will scale down ridiculously tiny for small screens in order to accommodate layout. When you visit a site on a mobile device, the site assumes you are visiting it from a desktop and want the full experience. The site then sets the viewport width to a default value (usually somewhere in the neighborhood of 980px depending on the browser). On a mobile device there simply isn't that kind of room and, subsequently, the site gets smooshed and shoved into the smaller screen. </p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #333333">&lt;</span><span style="color: #007700">meta</span> <span style="color: #007700">name</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;viewport&quot;</span> <span style="color: #007700">content</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;width=device-width, initial-scale=1&quot;</span><span style="color: #333333">&gt;</span>
+</pre></p>
+            <p>With this simple addendum to our <span class="greenText">&lt;head&rt;</span> element, however, we can gracefully adjust the display for smaller screens, for the most part. It establishes a relationship between the actual width of the device window and the assumed width of the browser window. The rule above establishes a 1:1 relationship with the actual device window and the layout width.</p>
+            <p>The viewport meta tag is not the standard, by the way. It was originally developed by Apple engineers and--because it worked--was quickly adopted by everyone and their mothers, but recently that has started to change. W3C never put forth the viewport meta tag standard, which Microsoft was quick to point out when they dropped support in IE10 in certain instances. To that end, you'll probably see developers leaning more on the CSS Device Adaptation standard, which is supported by the W3C. It looks like this:</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">@viewport</span>{
+    <span style="color: #007700">zoom</span><span style="color: #333333">:</span> <span style="color: #007700">1</span><span style="color: #BB0066; font-weight: bold">.0</span><span style="color: #333333">;</span>
+    <span style="color: #007700">width</span><span style="color: #333333">:</span> <span style="color: #007700">device-width</span><span style="color: #333333">;</span>
+}
+</pre></p>
+            <p>This removes the responsiblity of 'styling' the page from HTML and shifts it back to our CSS as is the way it should be, all things considered.</p>
+
+
+
+
+
+
+            <h3>Flexbox</h3>
+
+            <h3>CSS grids</h3>
+
+            <h3>Frameworks</h3>
 
 
 
