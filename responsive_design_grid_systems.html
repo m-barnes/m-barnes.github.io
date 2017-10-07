@@ -139,13 +139,140 @@
 }
 </pre></p>
             <p>This removes the responsiblity of 'styling' the page from HTML and shifts it back to our CSS as is the way it should be, all things considered.</p>
-
-
-
-
-
-
             <h3>Flexbox</h3>
+            <p>Thus far we've looked at some relatively easy ways to make your site a bit more responsive. These one-off methods go a long way to ensure that your stuff--whatever that 'stuff' may be--will look pretty good regardless of device and screen size.</p>
+            <p>But you can do more.</p>
+            <p>With the 'rise of mobile' there has been a real big push--and rightfully so--to develop new methods of building responsive sites. As we've talked about already, absolute/relative positioning, floats, and the like were really never meant to fill that particular need and while they've done developers great service, it's probably time we retire them in favor of better alternatives.</p>
+            <p>CSS3 Flexbox, flexible boxes, or just 'flexbox' is one of the newer layout modes in CSS3. Again, positioning, floating, relative sizing...these things are great, but terribly unreliable as to their behavior has device sizes change. Flexbox provides a superior alternative for a number of reasons (e.g. no floats, no collapsing margins, etc.), but really it's greatest value is that it is predictable. Items in a 'flexbox' behave exactly as you would expect them to behave on collapsing or expanding displays.</p>
+            <p>A flexbox is basically two parts:
+              <ul>
+                <li>flex container - this is the 'box' in which all the content you want to flex is going to be kept. You use the display property of an element, declaring it as either <span class="attribute">flex</span> (block-level) or <span class="attribute">inline-flex</span> (inline).</li>
+                <li>flex items - the items inside the flexbox. Doesn't matter what these items are or what you're doing with them.</li>
+              </ul>
+            </p>
+            <p>This...</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #BB0066; font-weight: bold">.flex-container1</span> {
+    <span style="color: #008800; font-weight: bold">display</span><span style="color: #333333">:</span> flex;
+    <span style="color: #008800; font-weight: bold">width</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100</span><span style="color: #333333">%</span>;
+    <span style="color: #008800; font-weight: bold">justify</span><span style="color: #333333">-</span><span style="color: #008800; font-weight: bold">content</span><span style="color: #333333">:</span><span style="color: #008800; font-weight: bold">center</span>;
+    <span style="color: #008800; font-weight: bold">background-color</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">#ebebeb</span>;
+}
+
+<span style="color: #BB0066; font-weight: bold">.flex-item1</span> {
+    <span style="color: #008800; font-weight: bold">background-color</span><span style="color: #333333">:</span>  <span style="color: #6600EE; font-weight: bold">#336699</span>;
+    <span style="color: #008800; font-weight: bold">color</span><span style="color: #333333">:</span><span style="color: #007020">white</span>;
+    <span style="color: #008800; font-weight: bold">width</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">20</span>rem;
+    <span style="color: #008800; font-weight: bold">height</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">20</span>rem;
+    <span style="color: #008800; font-weight: bold">margin</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">1</span>rem;
+    <span style="color: #008800; font-weight: bold">text-align</span><span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">center</span>;
+    <span style="color: #008800; font-weight: bold">padding-top</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">8</span>rem;
+}
+</pre></p>
+            <p>
+            <pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;flex-container1&quot;</span><span style="color: #007700">&gt;</span>
+                <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;flex-item1&quot;</span><span style="color: #007700">&gt;</span>flex item 1<span style="color: #007700">&lt;/div&gt;</span>
+                <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;flex-item1&quot;</span><span style="color: #007700">&gt;</span>flex item 2<span style="color: #007700">&lt;/div&gt;</span>
+                <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;flex-item1&quot;</span><span style="color: #007700">&gt;</span>flex item 3<span style="color: #007700">&lt;/div&gt;</span>
+              <span style="color: #007700">&lt;/div&gt;</span>
+</pre></p>
+
+            <style>
+              .flex-container1 {
+                  display: flex;
+                  width: 100%;
+                  justify-content:center;
+                  background-color: #ebebeb;
+              }
+
+              .flex-item1 {
+                  background-color:  #336699;
+                  color:white;
+                  width: 20rem;
+                  height: 20rem;
+                  margin: 1rem;
+                  text-align: center;
+                  padding-top:8rem;
+              }
+              </style>
+              <p>Nets us this...</p>
+              <div class="flex-container1">
+                <div class="flex-item1">flex item 1</div>
+                <div class="flex-item1">flex item 2</div>
+                <div class="flex-item1">flex item 3</div>
+              </div>
+              <p>If you resize that, you should find it looks pretty good regardless of screen size. Everything outside the flexbox is unaffected by the rules inside the flexbox. The flex items are lined up--and will stay--along a central axis, which means the content will not shift and stack. At some point, however, the screen size will not be large enough to accommodate the explictly defined size of the flex items (i.e. 20rem x 20rem). You should note that while the flex item may resize, the text inside the box doesn't and won't--within reason.</p>
+              <p>Now that I have these items inside a flexbox, I can do all kinds of funky things to them simply by adding new property:value pairs to my CSS.</p>
+              <p>I can put them in a column rather than a row.</p>
+              <p>
+              <style>
+                .flex-container2 {
+                    display: flex;
+                    width: 100%;
+                    justify-content:center;
+                    background-color: #ebebeb;
+                    flex-direction: column;
+                }
+
+                .flex-item2 {
+                    background-color:  #336699;
+                    color:white;
+                    width: 20rem;
+                    height: 20rem;
+                    margin: 1rem;
+                    text-align: center;
+                    padding-top:8rem;
+                }
+                </style>
+                <div class="flex-container2">
+                  <div class="flex-item2">flex item 1</div>
+                  <div class="flex-item2">flex item 2</div>
+                  <div class="flex-item2">flex item 3</div>
+                </div>
+              </p>
+              <p>I can reverse the direction of the flex items, align to the perfect middle--both horizontally and vertically--to the parent container, and change the size of the middle flex item all by adding or modifying my CSS. You should definitely check these out these links, if you want to know more.
+                <ul>
+                  <li><a href="https://www.w3schools.com/css/css3_flexbox.asp">CSS Flexible Box @ W3Schools</a></li>
+                  <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox @ css-tricks</a></li>
+                </ul>
+              </p>
+              <style>
+                .flex-container3 {
+                    display: flex;
+                    width: 100%;
+                    height:500px;
+                    background-color: #ebebeb;
+                    flex-direction: row-reverse;
+                }
+
+                .flex-item3 {
+                    background-color:  #336699;
+                    color:white;
+                    width: 20rem;
+                    height: 20rem;
+                    margin: 1rem;
+                    margin:auto;
+                    text-align: center;
+                    padding-top:8rem;
+                }
+                .flex-item3_5 {
+                    background-color:  orange;
+                    color:white;
+                    width: 20rem;
+                    height: 20rem;
+                    margin: 1rem;
+                    margin:auto;
+                    text-align: center;
+                    padding-top:8rem;
+                    flex-grow:2;
+                }
+                </style>
+                <div class="flex-container3">
+                  <div class="flex-item3">flex item 1</div>
+                  <div class="flex-item3_5">flex item 2</div>
+                  <div class="flex-item3">flex item 3</div>
+                </div>
+
+
 
             <h3>CSS grids</h3>
 
