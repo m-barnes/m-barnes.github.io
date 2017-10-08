@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap Core CSS -->
+      <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+      <link href="css/custom.css" rel="stylesheet">
+    <!--jquery and JavaScript-->
+      <script type="text/javascript" src="js/jquery.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <!--back arrow and title with fixed position-->
+      <div class="col-md-12 header navbar navbar-default navbar-fixed-top">
+          <div class="col-md-10"><a href="javascript:history.back(1)">&#129104;</a>
+          <a href="index.html">Frontend Programming</a></div>
+          </div>
+          <div class="languages">
+            <div class="col-md-4 html">&#60;&nbsp;&#8725;&nbsp;&#62;&nbsp;html</div>
+            <div class="col-md-4 css">&#123;&nbsp;&nbsp;&#125;&nbsp;css</div>
+          </div>
+    </header>
+    <main class="col-md-12 main">
+      <!--back to top button-->
+      <div id="top"><a href="#">Back to Top</a></div>
+      <!--Jump Menu-->
+      <aside class="col-md-4 col-md-push-8 jump">
+        <h4>In this lesson</h4>
+        <hr />
+        <h5>Objectives</h5>
+              <ul>
+                <li>Objective 1</li>
+                <li>Objective 2</li>
+                <li>Objective 3</li>
+              </ul><hr/>
+        <h5>Terms</h5>
+              <ul>
+                <li><a href="#tags">Tags</a></li>
+                <li><a href="#elements">Elements</a></li>
+                <li><a href="#attributes">Attributes</a></li>
+              </ul><hr/>
+        <h5>Concepts</h5>
+              <ul>
+                <li><a href="#dom">Document Object Model</a></li>
+                <li><a href="#html5">HTML5</a></li>
+                <li><a href="#blockInline">Block and Inline</a></li>
+              </ul>
+        </aside>
+        <article class="col-md-8 col-md-pull-4 padding2rem">
+          <p>I've rambled on a bit, but before we move on, I'd like to make special mention of frameworks.</p>
+          <p>This business of responsive design can be quite complicated. It would be nice to have a way to stockpile all the work done to make a site responsive without having to rewrite all this stuff each time.</p>
+          <p>This--essentially--is a framework.</p>
+          <p>A framework is a scaffold. It is an environment consisting of a bunch of built-in basic bits of functionality that you can use to help you put together your project faster. It is a kit car, of sorts. You download the framework, you use the pieces of it you want to use, leaving some as-is and modifying other parts, and leave the rest.</p>
+          <p>There are all kinds of different frameworks, each with different functionality and features depending on its application and focus. In the frontend world, frameworks focus on HTML, CSS, and JavaScript, but there are also frameworks for software development, backend development, etc., each containing sets of predefined protocols, rules, standards, and guidelines designed to do most of the repetitive and difficult foundational work of development, leaving you to focus on other things.</p>
+          <p>This site, for example and as previously mentioned, was built using Bootstrap, which is--by far--one of the most popular frontend frameworks out there. It has all the basic foundational stuff (like grid column setups, relative sizing, etc.) to build a responsive site quick and easy. I don't have to worry about setting up my own CSS or JavaScript to make my site look good on different devices as Bootstrap does all the heavy lifting for me. Bootstrap also provides support for preprocessors, features built-in templates and an icon set with a ton of support in the community in the way of documentation and third-party plugins. They've given me all the tools I need, I just need to use them.</p>
+          <p>So, don't tell me. Show me, right?</p>
+          <p><img src="images/bootstrap_theme1.png" alt="screenshot of bootstrap website"/>
+          <figcaption>Courtesy of <a href="https://getbootstrap.com/docs/3.3/examples/theme/"/> Bootstrap</a></p>
+          <p>
+            <div class="container">
+  <h2>Animated Alerts</h2>
+  <p>The .fade and .in classes adds a fading effect when closing the alert message.</p>
+  <div class="alert alert-success alert-dismissable fade in" id="success">
+    <a href="#success" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+  </div>
+  <div class="alert alert-info alert-dismissable fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+  </div>
+  <div class="alert alert-warning alert-dismissable fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+  </div>
+  <div class="alert alert-danger alert-dismissable fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+  </div>
+  </div>
+
+  </p>
+          <p>
+            <nav class="navbar navbar-inverse">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#">WebSiteName</a>
+                </div>
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Page 1</a></li>
+                  <li><a href="#">Page 2</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+              </div>
+            </nav>
+          </p>
+  			</article>
+      </main>
+      <script>
+        (function($) {
+        $(document).ready(function(){
+
+            //When distance from top = 250px fade button in/out
+            $(window).scroll(function(){
+                if ($(this).scrollTop() > 250) {
+                    $('#top').fadeIn(300);
+                } else {
+                    $('#top').fadeOut(300);
+                }
+            });
+        });
+        })(jQuery);
+      </script>
+  </body>
+</html>

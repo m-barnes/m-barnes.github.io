@@ -3,12 +3,13 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap Core CSS -->
+    <!-- Bootstrap Core CSS-->
       <link href="css/bootstrap.css" rel="stylesheet">
     <!-- Custom CSS -->
       <link href="css/custom.css" rel="stylesheet">
-    <!--jquery -->
+    <!--Core jquery and JavaScript -->
       <script type="text/javascript" src="js/jquery.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
   <body>
     <header>
@@ -31,21 +32,23 @@
         <hr />
         <h5>Objectives</h5>
               <ul>
-                <li>Objective 1</li>
-                <li>Objective 2</li>
-                <li>Objective 3</li>
+                <li>Investigate the 'mobile first' paradigm in frontend development and adapt its tenants to original work.</li>
+                <li>Compare and contrast the different responsive design methodologies.</li>
+                <li>Employ responsive design principles and adapt responsive design applications for personal use in original works.</li>
+                <li>Compare and contrast the methods and application of Flexbox and CSS Grid Layout.</li>
               </ul><hr/>
         <h5>Terms</h5>
               <ul>
-                <li><a href="#tags">Tags</a></li>
-                <li><a href="#elements">Elements</a></li>
-                <li><a href="#attributes">Attributes</a></li>
+                <li><a href="#images">Responsive images</a></li>
+                <li><a href="#relative">Relative sizing</a></li>
+                <li><a href="#mediaqueries">Media queries</a></li>
+                <li><a href="#viewport">Viewports</a></li>
               </ul><hr/>
         <h5>Concepts</h5>
               <ul>
-                <li><a href="#dom">Document Object Model</a></li>
-                <li><a href="#html5">HTML5</a></li>
-                <li><a href="#blockInline">Block and Inline</a></li>
+                <li><a href="#mobile">Mobile First</a></li>
+                <li><a href="#flex">Flexbox</a></li>
+                <li><a href="#grid">CSS Grid Layout</a></li>
               </ul>
         </aside>
         <article class="col-md-8 col-md-pull-4 padding2rem">
@@ -62,6 +65,8 @@
           <p><img src="images/content_like_water.jpg" alt="Image of water filling various containers"/></p>
           <p>Responsive web design is an extension of user interface plasticity, which is the capability of a user interface to withstand the system's physical characteristics (e.g. screen size, orientation, interaction method, etc.) and software capabilities (e.g. browser support, platform, connection method, etc.) while still preserving usability.</p>
           <p>This has long been the standard in other areas of development, right? Think of PC gaming, for instance. Game developers really have no idea what kind of system you're going to be playing their game on. I mean, they have a general idea, but they have no clue as to the specific capabilities of your personal gaming PC, do they? So, they have to find a way to adapt their experience across a wide variety of systems from the incredibly capable (e.g. monster graphics cards on systems with high-end processors and lots of RAM) to those that aren't (e.g. low-end graphics cards on systems with mid-range processors and minimum amounts of RAM). Game developers--by and large--follow the methodology of 'graceful degredation.' The idea being that you develop for the monster system, but as the capabilities of the system lessen, so, too, does the experience. Draw distances are reduced, textures go low-resolution, dynamic shadow and lighting systems are shut down, etc. The game performs to the maximum capability of the system, keeping the core of the game experience (e.g. gameplay, narrative, etc.) in place, but downgrades the fidelity of that game experience to make sure the user experience remains positive.</p>
+          <a id="mobile" class="anchor"></a>
+          <h3>Mobile First</h3>
           <p>In web design and development we take the antithesis approach and develop from the base experience up (i.e. progressive enhancement) for a number of reasons. The biggest one--at least, right now--is the collective shift of web content consumerism to mobile. For you see, mobile is king - mobile traffic accounts for more than half of all traffic on the internet and is growing...a lot...and quickly. Phones--by and large--aren't as capable as other platforms (e.g. smaller screens, less powerful hardware, etc.), so, it makes sense to develop your content with them in mind as they will, most likely, be the ones looking at your stuff.</p>
           <p>To that end, the current methodology is to develop 'mobile first,' which means you build for smaller screens and low capability and then work your way up. Mobile has the most limitations so it forces you to take a good, long, hard look at your content to decide what's important and what's not, right? Sizzle is good, pretty is great, but if the core content is junk, then people aren't going to stick around for the show.</p>
           <p>Once you have that base experience designed, it's easier to translate that--and add additional functionality--to your content for larger and more capable devices.</p>
@@ -72,6 +77,7 @@
               <li>media queries - allow for automatic--and specific--movement of content based on characteristics of the display device, usually screen size or width of the browser window.</li>
             </ul>
             <p>Theory is great, but the 'how' is why you're here, so, let's get to it. There are a number of things we can do right out of the gate to make our site more responsive. The general idea is to build for flexibility. This website, for instance, doesn't use a whole lot 'responsive-centric' design elements, but if you resize it, you'll see that--while it isn't perfect--it does scale pretty well (the 'back to top' floating link is problematic because of its absolute positioning). I'm using Bootstrap, which is an HTML, CSS, and JavaScript framework (we'll definitely talk about them later), to build a very basic column setup, and then using a number of CSS rules to keep everything as flexible as I can.</p>
+            <a id="images" class="anchor"></a>
             <h4>Images</h4>
             <p>First, I want to address images. Images can--and do--break a site layout fast when that site is resized. Images--by and large--come in a wide variety of sizes and formats, which makes accommodation of them particularly troublesome. As a rule of thumb, we want the maximum size of the image when displayed to be 100% of the <em>actual size of the image</em>. This prevents smaller images from being blown up and pixelated on larger screens. On the other hand, we also don't want our larger images to take over a disproportionate amount of screen real estate and push all other content out, so, we need some way to reign them in a bit.</p>
             <p>The ideal way is to control the container in which that image is displayed. In this case, the <span class="greenText">&lt;img&gt;</span> element itself.</p>
@@ -94,6 +100,7 @@
             <p>When we apply that rule to our donut, we get this:</p>
             <p><img src="images/donut.png" class="img_small" alt="image of a chocolate covered donut"/></p>
             <p>Our donut retains its original size and all is right with the world again.</p>
+            <a id="relative" class="anchor"></a>
             <h4>Relative sizing</h4>
             <p>I mentioned above that relative sizing was a key principle of responsive design, so, without further adieu, let's define what that means and then run through a brief list of examples.</p>
             <p>Pixels, picas, and points (along with some others that don't start with the letter 'p') fall into the category of absolute lengths or sizes. They are a fixed value and elements expressed using these absolute values will appear exactly to the size specified regardless of other considerations or context. By and large you should avoid absolute sizing of any kind when you can. Again, you don't know how your user is going to be viewing your content and, consequently, using absolute values can lead to unintended effects that can break your layout. Additionally, there is an accessibility issue in the context of those with vision impairments. If they cannot effectively or easily resize elements on your site, it is--as far as they are concerned--unusable.</p>
@@ -110,6 +117,7 @@
             </p>
             <p>All of the relative size metrics mentioned above have total support in most modern browsers (and most legacy browsers), including Chrome, IE, Edge, Safari, Opera, and Firefox.</p>
             <p>The common consensus--at least this week--among developers is that you should use rem for all your sizing and spacing <em>unless</em> you're using media queries as the use of rems will break layout when the user forces the browser to 'zoom.' Personally, I don't use media queries a whole lot, so, I just slap rems on everything and call it done. Again, your mileage may vary based on your preferences.</p>
+            <a id="mediaqueries" class="anchor"></a>
             <h4>Media queries</h4>
             <p>Speaking of media queries...</p>
             <p>I keep beating this poor dead horse, but, again, you don't know how others are going to be viewing your content. Media queries are useful for helping to organize and layout content based on different device archetypes (screen vs. print, the width of the browser viewport, mobile vs. desktop, etc.). On larger screens you have some room with which to work and, consequently, you might want to add additional features and/or functionality to your site. Additional features and/or functionality that just don't work on devices with smaller screens. You might also want to have a different design or layout depending on device orientation (e.g. portrait or landscape).  Interactive elements typically don't 'print' all that well, so, it might be a good idea to have a separate print-centric design that excises those elements from the page before it's sent to a printer.</p>
@@ -123,6 +131,7 @@
             <p>This media query only applies if the content is viewed on a digital screen with a max-width of 500px. If the screen (browser window) is smaller than that, the background will turn a noxious shade of light blue.</p>
             <p>That value of 500px is an example of a 'breakpoint.' It is the fulcrum on which our CSS property pivots, right? If the screen is less than 500px, the background is light blue. If it's larger than 500px, the background is the default color (usually white).</p>
             <p>Breakpoints are often used in reference to screen sizes (desktop screen sizes vs. mobile screen sizes) where content is shifted around and displayed differently according to minimum/maximum window width, but it can refer to any point, or requirement, in the design where the layout or overall functionality is altered from the original design prototype (light themes vs. dark themes, javascript or no javascript, etc.).</p>
+            <a id="viewport" class="anchor"></a>
             <h4>Viewport</h4>
             <p>The viewport refers the user's visible area of a webpage and it varies according to device.</p>
             <p>If you've ever seen anything like this....</p>
@@ -139,6 +148,7 @@
 }
 </pre></p>
             <p>This removes the responsiblity of 'styling' the page from HTML and shifts it back to our CSS as is the way it should be, all things considered.</p>
+            <a id="flex" class="anchor"></a>
             <h3>Flexbox</h3>
             <p>Thus far we've looked at some relatively easy ways to make your site a bit more responsive. These one-off methods go a long way to ensure that your stuff--whatever that 'stuff' may be--will look pretty good regardless of device and screen size.</p>
             <p>But you can do more.</p>
@@ -272,6 +282,7 @@
                   <div class="flex-item3_5">flex item 2</div>
                   <div class="flex-item3">flex item 3</div>
                 </div>
+            <a id="grid" class="anchor"></a>
             <h3>CSS grids</h3>
             <p>I've been talking of things in columns and rows for a reason, right? For years, designers and developers have been laying out sites according to a 'grid.' The stuff that we've talked about so far really only addresses content in one dimension--horizontally, across the screen. The window is divided up into a series of columns (usually 12) and then each element is placed inside a column (or across multiple columns). This is grid view. As the window resizes, so, too does the 'grid.'</p>
             <p><img src="images/grid_example.jpg" alt="image of a css grid superimposed on a website"/>
@@ -402,9 +413,11 @@
             <p>When I set the 'grid-column' value, I need to tell it where to start and stop using line-based placement. I strongly suggest you go out and do some research on it by visiting sites like <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">css-tricks</a> as they go into much greater detail as to the 'ins' and 'outs' of CSS Grid Layout than what we can cover effectively here. For the class .one, which represents column 1, I have specified that I want the column to start at line 1 and continue on to line 3. This effectively covers 2 of the 3 columns I've set. Class .two represents column 2, right? Start at line 2 and continue to line 4.</p>
             <p>The same is the case for placement as far as 'row' is concerned. However, in class .one I've only used the one value: the start value. The default stop value--and you don't have to include it--is the next number sequentially. The next number sequentially after 1 is...well, 2 and, so, as a result, the grid item will stop at line 2. In class .two, I want the row to span across two rows, so, I throw in a stop value of 3 to indicate line 3.</p>
             <p>So, using CSS Grid Layout, I have defined my space in dimensionally not just horizontally (e.g. x-axis, abcissa) and vertically (e.g y-axis, ordinate), but have also pulled part of the layout out into 3-dimensional space (e.g. z-axis, applicate) demonstrated by the overlap of items 'One' and 'Two.' I have effectively managed to create a usable, versatile, and responsive layout without the use of complicated position rules, tables, floats, etc. and I have done it all in CSS with minimal application in the HTML.</p>
-
-
             <h3>Frameworks</h3>
+            <p>I'd like to talk just a bit about frameworks while we're here. We're definitely going to talk about them in-depth later on, but as I've already been talking of Bootstrap (a frontend framework for HTML, CSS, and JavaScript), I thought I should probably mention them.</p>
+            <p>Frameworks are pre-built scaffolding on which you can build your project. Bootstrap, for example, provides a number of pre-defined features (e.g. templates, styling options, JavaScript functionality, icons, etc.) that you can use in your work. The benefit to this--and again, we'll go into it more later on--is that I don't have to worry about building a site from the ground up every single time including styling preferences or basic JavaScript functionality. I don't have to, metaphorically, reinvent the wheel every time I want to take a trip out to Walmart. I can build a site relatively quickly and easily without having to worry too much about all the foundational work that goes into it. It's a kit car or a pre-fab house. I'm more than welcome to use what comes in the box, but I can also customize stuff as I see fit.</p>
+            <p>Like I've said, we're definitely going to talk about all of this later, but, for now, you should totally check out <a href="https://getbootstrap.com/">Bootstrap</a> or <a href="http://foundation.zurb.com/">Foundation</a> or <a href="http://semantic-ui.com/">Semantic</a> or any one of the dozens of frontend frameworks out there. </p>
+
 
 
 
@@ -426,5 +439,6 @@
         });
         })(jQuery);
       </script>
+
   </body>
 </html>
