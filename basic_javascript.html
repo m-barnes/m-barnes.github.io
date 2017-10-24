@@ -79,11 +79,91 @@
             <p>The conventions:</p>
             <ul>
               <li>Be consistent. Different programmers have different styles and use different conventions when naming variables. This is fine. Use what you like, but be consistent in its application. Most Frontend developers use the 'camelCase' notation convention. This is where you capitalize the first letter of each successive and separate word in your variable name. <strong>myAge</strong>, <strong>firstName</strong>, etc.</li>
+              <li>Be concise. Shorter variable names are better.</li>
               <li>Be semantic. Remember back in our discussion of HTML5 when we talked about how some of the new element names were 'semantic,' meaning they described the content inside them? Works the same here. JavaScript variables should be describable of the content, or value, of the data being stored. It is difficult to tell--at first glance--what a variable named <strong>hdl173_2</strong> is referencing. You don't have to do much detective work, however, to figure out what a variable named <strong>userName</strong> is referencing.</li>
             </ul>
             <h4>Declaring variables</h4>
+            <p>In JavaScript this is relatively easy.</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> city <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Mountain Home&quot;</span>;
+</pre></p>
+            <p>Let's step through:
+              <ul>
+                <li>'<span class="greenText">var</span>' is our keyword. We are telling the interpreter that a named variable needs to be created.</li>
+                <li>'city' is our variable name. Guess what value this variable is going to reference?</li>
+                <li>'=' is our assignment operator. We are associating the variable name of 'city' with a value. The association will stick--provided we don't change it programmatically--until the program, or script, finishes.</li>
+                <li>'Mountain Home' is our value.</li>
+              </ul>
+            </p>
+            <p>Here I am both declaring the variable and assigning a value in the same statement. I could just as easily split this up into two separate statements like so:</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> city;
+
+city <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Mountain Home&quot;</span>;
+</pre></p>
             <h4>Variable data types and operators</h4>
-            
+            <p>Well, that's great, but what can I keep in my little boxes and how do I do stuff with them?</p>
+            <p>The latest ECMAScript standard defines seven different data types.
+              <del>
+                <dt>Boolean</dt>
+                  <dd>- True or False</dd>
+                <dt>Null</dt>
+                  <dd>- The variable points to nothing. It's not empty, it's not a zero-value, it has a value, and it points to nothing.
+                  <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> nullVariable <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span>;
+</pre></p>
+</dd>
+                <dt>Undefined</dt>
+                  <dd>- No value has been assigned.
+                  <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> vacantVariable;
+</pre></p>
+</dd>
+                <dt>Number</dt>
+                  <dd>- Some languages make a distinction between whole numbers, floating point decimal numbers, etc. JavaScript is not one of those languages. All numbers are numbers.
+                  <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> currentYear <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">2017</span>;
+</pre></p>
+</dd>
+                <dt>Strings </dt>
+                  <dd>- Again, some langauges make a distinction between single characters and other textual data like words, phrases, etc. JavaScript is not one of those languages. All textual data can be represented using the 'string' data type.
+                  <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> myName <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Michael&quot;</span>;
+  </pre></p>
+</dd>
+                <dt>Symbols </dt>
+                  <dd>- Returns a unique value that can be used for object identifiers. I'm sure there are developers out there doing stuff with this, but the definition is relatively new and I've not run into any of them.</dd>
+                <dt>Object</dt>
+                  <dd>- a complex data structure comprised of the data itself (variables / properties) and instructions on how to work with that data (functions / methods).</dd>
+                </dl>
+                <p>To do stuff with these data types we need a way to perform 'operations' on them and, so, enter the operators:</p>
+                <ul>
+                  <li><strong>Arithmetic -</strong></li>
+                  <ul>
+                    <li>+ (addition)</li>
+                    <li>- (subtraction)</li>
+                    <li>* (multiplication)</li>
+                    <li>/ (division)</li>
+                    <li>% (modulus, or division remainder)</li>
+                    <li>++ -- (increment and decrement)</li>
+                  </ul>
+                  <li><strong>Assignment -</strong></li>
+                  <ul>
+                    <li>= (assignment)</li>
+                  </ul>
+                  <li><strong>Comparison -</strong></li>
+                  <ul>
+                    <li>== (equal to)</li>
+                    <li>=== (equal to and equal type)</li>
+                    <li>!= (not equal to)</li>
+                    <li>> (greater than)</li>
+                    <li>< (less than)</li>
+                    <li>>= (greater than or equal to)</li>
+                    <li><= (less than or equal to)</li>
+                  </ul>
+                  <li><strong>Logical -</strong></li>
+                  <ul>
+                    <li>&amp;&amp; (and)</li>
+                    <li>|| (or)</li>
+                    <li>! (not)</li>
+                  </ul>
+                </ul>
+                <p>JavaScript has dynamic typing, which means that data types can--and often are--changed after a variable has been declared. The interpreter will do it's best to do what it 'thinks' you want to do
+
 
 
   			</article>
