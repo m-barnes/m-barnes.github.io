@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap Core CSS -->
+      <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+      <link href="css/custom.css" rel="stylesheet">
+    <!--jquery and JavaScript-->
+      <script type="text/javascript" src="js/jquery.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <!--back arrow and title with fixed position-->
+      <div class="col-md-12 header navbar navbar-default navbar-fixed-top">
+          <div class="col-md-10"><a href="javascript:history.back(1)">&#129104;</a>
+          <a href="index.html">Frontend Programming</a></div>
+          </div>
+          <div class="languages">
+            <div class="col-md-4 html">&#60;&nbsp;&#8725;&nbsp;&#62;&nbsp;html</div>
+            <div class="col-md-4 css">&#123;&nbsp;&nbsp;&#125;&nbsp;css</div>
+            <div class="col-md-4 js">&#123;&#59;&#125;&nbsp;js</div>
+          </div>
+    </header>
+    <main class="col-md-12 main">
+      <!--back to top button-->
+      <div id="top"><a href="#">Back to Top</a></div>
+      <!--Jump Menu-->
+      <aside class="col-md-4 col-md-push-8 jump">
+        <h4>In this lesson</h4>
+        <hr />
+        <h5>Objectives</h5>
+              <ul>
+                <li>Objective 1</li>
+                <li>Objective 2</li>
+                <li>Objective 3</li>
+              </ul><hr/>
+        <h5>Terms</h5>
+              <ul>
+                <li><a href="#tags">Tags</a></li>
+                <li><a href="#elements">Elements</a></li>
+                <li><a href="#attributes">Attributes</a></li>
+              </ul><hr/>
+        <h5>Concepts</h5>
+              <ul>
+                <li><a href="#dom">Document Object Model</a></li>
+                <li><a href="#html5">HTML5</a></li>
+                <li><a href="#blockInline">Block and Inline</a></li>
+              </ul>
+        </aside>
+        <article class="col-md-8 col-md-pull-4 padding2rem">
+          <h1>Basic JavaScript</h1>
+          <h2>The road thus far...</h2>
+          <p>Having the ability to create something from scratch using only HTML and CSS is a fantastic skill to have, yes? It's rare, but there will be instances in your career where knowledge of--and only knowledge of--these two particular'languages' will be more than enough to get the job done. As your code base grows and traffic explodes, however, you're going to need a few more tools in your developer's toolbox.</p>
+          <p>Part of being a front end developer means working with JavaScript. It's an incredibly popular development language used on millions of websites all around the world. You can't swing a metaphorical cat by the tail in the development world without hitting a JavaScript developer.</p>
+          <p>Now here's the thing. It is of my opinion that HTML and CSS are, in fact, programming languages in the broadest of terms, yes? Yes, they are declarative languages that describe presentation, which puts them in a weird category when compared with other 'proper' programming languages like Java, Swift, Python, C++, etc. However, they are used to write instructions for a computer to execute, which--as far as I'm concerned--makes them a programming language. You could argue semantics all the live long day--and I'm sure there are people on the Internet who would love to drag you down into this hot mess--but the fact is that the real world (e.g. those that do the hiring and firing out there in the corporate world) <em>do consider them real programming languages</em> and, so, you should treat them as such too.</p>
+          <p>I mention this only because JavaScript is a 'proper' programming language. It is a high-level, dynamic, weak type, prototype-based, interpreted language, which puts it on a whole other level than HTML and CSS. CSS has incorporated some of these ideas with preprocessors, but, even then, you're still using a 'proper' programming language to do the heavy lifting (e.g. JavaScript or Ruby). Your CSS is exported, where it is processed by the preprocessor lanaguage of preference, and the modified CSS file is given back.</p>
+          <p>JavaScript provides the ability to add interactivity to a website. Again, not to belabor the point, but HTML is structure, CSS is presentation, and JavaScript is behavior.</p>
+          <p>JavaScript should be kept in a separate file (like you do for CSS) and then referenced in the HTML using the <span class="greenText">&lt;script<&gt;</span> element. Where you reference it is a matter for some consideration. JavaScript stops rendering, which can substantially increase page loading times, so, generally speaking, it's a good idea to reference it at the back end of your site near the closing <span class="greenText">&lt;/body&gt;</span> tag. However, if you have JavaScript that is absolutely necessary to render the page proper, then you should reference it in the <span class="greenText">&lt;head&gt;</span> element.</p>
+          <p><img src="images/warning sign.png" alt="image of the word warning in red"/img></p>
+          <p>I'm going to cover this pretty fast and it is--by no means--absolute and complete. Your interaction, involvement, use, etc. is almost entirely driven by how involved you want to get. We're going to cover some basic, vanilla JavaScript stuff now and then--at some point in the future--get into some JavaScript libraries and--if we have time--frameworks. Vanilla JavaScript is a bit harder to work with, but a fundamental understanding of some of the concepts we're going to cover will certainly help you later on down the road if you choose to follow the programmer-centric frontend development path. If, however, you're just looking to get it done and don't really care to understand the 'nuts and bolts' then libraries and frameworks will be more your cup of tea. Both paths are equally valid, each with the opportunity to develop a unique skills set. So, it really is just a question of which one fits your personal approach better.</p>
+          <a id="javascript" class="anchor"></a>
+          <h2>JavaScript</h2>
+          <h3>Variables</h3>
+          <p>In the abstract, variables are simply boxes in which we store data. We can call these boxes just about anything we want and we can store just about any value we like in them. In the more literal sense, however, variables refer--by name--to actual, physical locations in system memory where data is being stored. Programmatically, when you 'declare' a variable and give it a name, you are sectioning off a little chunk of system memory and assigning it an address. The value that you store is associated with that variable name and its contents are kept at that address in memory, right? When you reference a variable in your code, the system knows exactly where to look for that data because you've given that data an assigned location (well, really the system does, but that's neither here nor there).</p>
+          <h4>Naming variables</h4>
+          <p>To create a variable in JavaScript you must start with a name and there are some rules absolutely have to follow and a few conventions that you totally should as well.</p>
+          <p>The rules:</p>
+          <ul>
+            <li>A variable name <em>cannot</em> start with a number. It can have a number in it, but it <em>cannot</em> start with a number. <strong>7thGame</strong> is illegal; <strong>Game7</strong> is perfectly fine.</li>
+            <li>A variable name <em>cannot</em> contain a mathematical, logical, or relational operator in it. We'll cover operators a bit later, so, just kind of file that one away for now. <strong>blue*sky</strong> is illegal as it contains an asterisk, which is the mathematical symbol for multiplication; <strong>blueSky</strong> is perfectly fine.</li>
+            <li>A variable name <em>cannot</em> contain punctuation or special characters <em>with exception</em>. Generally, variables that contain punctuation like commas, semicolons, periods, quotation marks, etc. or special characters like '@,' '#,' '%,' etc. aren't allowed. There are some instances--specifically when working with libraries and frameworks--where <em>some</em> special characters are allowed. jQuery, for instance, uses the '$.' In the context of vanilla JavaScript this is illegal; In jQuery, it is perfectly fine.</li>
+            <li>A variable name <em>cannot</em> contain spaces.</li>
+            <li>You <em>cannot</em> use a reserved keyword for a variable name, although, a variable name can contain a reserved keyword. A variable named 'var' is illegal as it consists solely of the reserved JavaScript keyword 'var' for variable; A variable named 'var_firstName' is perfectly fine.</li>
+            <li>JavaScript variable names are case-sensitive. <strong>blackbox</strong> is not the same as <strong>Blackbox</strong> is not the same as <strong>BlackBox</strong> is not the same as <strong>blackBox</strong>.</li>
+            </ul>
+            <p>The conventions:</p>
+            <ul>
+              <li>Be consistent. Different programmers have different styles and use different conventions when naming variables. This is fine. Use what you like, but be consistent in its application. Most Frontend developers use the 'camelCase' notation convention. This is where you capitalize the first letter of each successive and separate word in your variable name. <strong>myAge</strong>, <strong>firstName</strong>, etc.</li>
+              <li>Be semantic. Remember back in our discussion of HTML5 when we talked about how some of the new element names were 'semantic,' meaning they described the content inside them? Works the same here. JavaScript variables should be describable of the content, or value, of the data being stored. It is difficult to tell--at first glance--what a variable named <strong>hdl173_2</strong> is referencing. You don't have to do much detective work, however, to figure out what a variable named <strong>userName</strong> is referencing.</li>
+            </ul>
+            <h4>Declaring variables</h4>
+            <h4>Variable data types and operators</h4>
+            
+
+
+  			</article>
+      </main>
+      <script>
+        (function($) {
+        $(document).ready(function(){
+
+            //When distance from top = 250px fade button in/out
+            $(window).scroll(function(){
+                if ($(this).scrollTop() > 250) {
+                    $('#top').fadeIn(300);
+                } else {
+                    $('#top').fadeOut(300);
+                }
+            });
+        });
+        })(jQuery);
+      </script>
+  </body>
+</html>
