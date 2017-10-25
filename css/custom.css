@@ -18,6 +18,12 @@ a:hover {
 #table1 tr:nth-child(even) {
         background: #ebebeb;
       }
+#testArea {
+  min-height:5rem;
+  padding:2rem;
+  margin:2rem;
+  background-color:#ebebeb;
+}
 
  body {
     background-image:url("../images/sayagata.png");
