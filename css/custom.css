@@ -94,12 +94,7 @@ hr {
 
 
 /*area specific CSS */
-.indexMenu {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  overflow: hidden;
-}
+
 
 
 .indexMenu a {
@@ -134,7 +129,6 @@ hr {
 
 /*header*/
 .header {
-  display:inline-flex;
   background-color:#69D2E7;
   font-family:"open sans";
   color:#fff;
@@ -144,6 +138,7 @@ hr {
 
 .header a {
   margin-right:2rem;
+  padding-left:1rem;
   font-size:xx-large;
   color:#fff;
 }
@@ -206,4 +201,10 @@ hr {
   bottom:0;
   right:0;
   display:none;
+}
+
+@media (min-width: 767px) {
+  .indexMenu {
+  display:flex;
+}
 }
