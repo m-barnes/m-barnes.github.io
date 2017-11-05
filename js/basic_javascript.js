@@ -25,3 +25,7 @@ function danger(my_image) {
 function safe(my_image) {
   my_image.src= "./images/safe.png";
 }
+
+function randomNumber() {
+  document.getElementById("randomValue").innerHTML = Math.floor(Math.random()*20)+1;
+}
