@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap Core CSS -->
+      <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+      <link href="css/custom.css" rel="stylesheet">
+    <!--jquery and JavaScript-->
+      <script type="text/javascript" src="js/jquery.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <!--back arrow and title with fixed position-->
+      <div class="header navbar navbar-default navbar-fixed-top">
+          <div class=><a href="javascript:history.back(1)">&#129104;</a>
+          <a href="index.html">Frontend Programming</a></div>
+          </div>
+          <div class="languages">
+            <div class="col-md-4 html">&#60;&nbsp;&#8725;&nbsp;&#62;&nbsp;html</div>
+            <div class="col-md-4 css">&#123;&nbsp;&nbsp;&#125;&nbsp;css</div>
+            <div class="col-md-4 js">&#123;&#59;&#125;&nbsp;js</div>
+          </div>
+    </header>
+    <main class="col-md-12 main">
+      <!--back to top button-->
+      <div id="top"><a href="#">Back to Top</a></div>
+      <!--Jump Menu-->
+      <aside class="col-md-4 col-md-push-8 jump">
+        <h4>In this lesson</h4>
+        <hr />
+        <h5>Objectives</h5>
+              <ul>
+                <li>Define JavaScript and summarize its place in context of modern frontend programming</li>
+                <li>Define 'variable' and explain its purpose and use in JavaScript</li>
+                <li>Analyze and summarize variable naming conventions, variable declaration, variable data types, and operators.</li>
+                <li>Compare and contrast diffent 'events'</li>
+              </ul><hr/>
+        <h5>Terms</h5>
+              <ul>
+                <li><a href="#javascript">JavaScript</a></li>
+                <li><a href="#events">Event driven programming</a></li>
+              </ul><hr/>
+        <h5>Concepts</h5>
+              <ul>
+                <li><a href="#naming">Naming variables</a></li>
+                <li><a href="#declaring">Declaring variables</a></li>
+                <li><a href="#types">Data types and operators</a></li>
+                <li><a href="#constants">Constants</a></li>
+              </ul>
+        </aside>
+        <article class="col-md-8 col-md-pull-4 padding2rem">
+          <h1>Decisions &amp; loops</h1>
+          <h2>Should I stay or should I go now?</h2>
+          <p>In the programming world there are--essentially--three different types of 'structures' and all logic problems in programming can be solved with algorithms using these three structures, which can be combined in an infinite number of ways.</p>
+          <p>The past few lessons, we've been hanging out with 'sequence' structures, specifically, functions and/or methods. Sequence structures are actions or events that lead to other actions or events. I call a function, that function executes, each line in the code block executes sequentially, and a result is returned (maybe). There can be any number of actions or events in the sequence, but each action or event must execute with no possibility of skipping or branching.</p>
+          <h3>Selection / Decision</h3>
+          <p>The second structure on our whirlwind tour of JavaScript programming is the 'selection' structure. You might also see them referred to as 'decision' structures or 'conditional' structures, but regardless of whatever alias they happen to be going by, the song remains the same.</p>
+          <p>In a selection structure, a question is asked and--depending on the answer--the program chooses a 'path,' or course of action, to take. Once the decision has been made, the program goes back to business as usual. Sometimes that question is something simple like 'has a button been pressed?' If that condition has been met, do that thing you're supposed to do when the button is pressed. The flow chart logic looks a bit like this:</p>
+          <p><img src="images/singlealternative.png" alt="image of a single alternative flow chart" class="img_small"/></p>
+          <p>Sometimes you might have two options. This is called a binary decision, which looks like this:</p>
+          <p><img src="images/binarydecision.png" alt="image of a binary decision flow chart" class="img_small"/></p>
+          <p>Sometimes you have more than two options. These are called switch statements, but you might also see them referred to as case statements. In these instances, we're not so much asking a yes/no question, but more like asking for a value and then comparing that value against a list of predefined values, or 'cases' for a match to determine the path. On the off chance that the value, or expression provided doesn't match any of our predefined values, we must include a default case, which enables us to 'break' out of the condtional statement and keep the program running along  .</p>
+          <p><img src="images/switch.png" alt="image of a switch statement" class="img_small"/></p>
+          <h4>Syntax</h4>
+          <p>Our mechanism for handling conditional statements in JavaScript is the if/else statement. There are, of course, others, but this one is the most common, so, we're going to start there.</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> hour <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #007020">Date</span>().getHours();
+
+<span style="color: #008800; font-weight: bold">if</span> (hour <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">18</span>) {
+    greeting <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Good day&quot;</span>;
+}
+<span style="color: #008800; font-weight: bold">else</span> {
+    greeting <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Good evening&quot;</span>;
+}
+
+<span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">=</span> greeting;
+</pre></p>
+
+
+          <p>As previously mentioned, JavaScript has a number of really useful built-in methods. One of those functions queries the system for the time. Using that method, I can write code that will output a specific and particular greeting based on the time of day. It's not really all that complicated, but it adds a nice, friendly touch to your interface, if that's the kind of thing for which you're looking. As usual, let's parse this out a bit:
+            <ul>
+              <li>'if' is our keyword. This starts the conditional statement.</li>
+              <li>'(hour < 18)' is our condition to test. 'hour' is the variable in which we're storing the result of the built-in method I mentioned up above. The Date().getHours() methods return a value in the range of 0-23, which I can then use for my comparison. The block of code inside the curly brackets is what I want to do if the condition evalutates to <strong>true</strong>. If the time returned is of a value less than 18 (or six o'clock), my condition is 'truthy,' and, consequently, my greeting is set to 'Good day.'</li>
+              <li>'else' is also a keyword and extends the 'if' statement. The condition isn't always going to evaluate to true, which means you have to have some alternative block of code to execute. I've set this up as a binary statement, it's either before six o'clock or it isn't, so, if the 'if' statement evalutates to false, I'm going to simply set the greeting to 'Good evening.'</li>
+              <li>I then take that greeting and--for now--simply output it to an element on the page with the id of 'example'.</li>
+            </ul>
+          </p>
+          <p>Binary decisions are great, but the world isn't made up exclusively of binary decisions is it? Sometimes we want options to help label and define the space between the absolutes of the world. To that end we're going to make a small modification to the code to make it a bit more specific and useful. We're going to add an additional test statement using the keyword 'else if'.</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> hour <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #007020">Date</span>().getHours();
+
+<span style="color: #008800; font-weight: bold">if</span> (time <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">10</span>) {
+    greeting <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Good morning&quot;</span>;
+}
+<span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (time <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">16</span>) {
+    greeting <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Good afternoon&quot;</span>;
+}
+<span style="color: #008800; font-weight: bold">else</span> {
+    greeting <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Good evening&quot;</span>;
+}
+
+<span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">=</span> greeting;
+</pre></p>
+          <p>No need to parse this one out as I'm not doing anything special with it. I'm modifying the first condition and then adding a second condition to my series of conditions to test.</p>
+          <p>There are a few things to keep in mind when dealing with selection statements and conditions.
+            <ul>
+              <li>You can have as many testing conditions and statements as you like. You can add 'else if' statements all the way down, but you need to understand that all paths are mutually exclusive. "Two roads diverged in a yellow wood, and sorry I could not travel both...." and all that. Each of these conditions represents a potential path that our program logic may travel, but it can only travel the one path--whatever the path. Once the decision has been made, the only way to take a different option is to reinitialize the selection statement.</li>
+              <li>Like with arrays and functions, you can next selection statements indefinitely. You can have if/else statements inside if/else statements inside if/else statements inside...well, you get the point. Keep in mind, however, that it increases overall complexity and lowers readability (for most of us). It's hard enough to follow the data through a program most days, but you start wrapping if/else statements inside if/else statements and you've added a whole other level of difficulty to overcome.</li>
+              <li>Most of the work of the condition statement is going to be done using comparison operators and there will be instances where you want your evaluation to test not just for one condition, but multiple conditions. Does the statement evaluate true if this condition <em>and this other condition</em> are met? Does the statement evaluate true if this condition <em>or this other condition</em> are met? In those instances we'd use logical operators, which we'll talk of in just moment.</li>
+              <li>Technically, you do not need an else statement after an else if statement--if it's included. I'm of the opinion, however, that it's always best to cover as much of yourself as you can and that means--to me anyway--adding an else statement to catch anything that might slip through the cracks whenever I can. It adds a bit of overhead and bloat to the code, but better to be prepared than caught off guard, again, in my opinion.</li>
+            </ul>
+          </p>
+          <h4>Honorable mention: the switch statement</h4>
+          <p>
+
+
+
+
+
+
+  			</article>
+      </main>
+      <script>
+        (function($) {
+        $(document).ready(function(){
+
+            //When distance from top = 250px fade button in/out
+            $(window).scroll(function(){
+                if ($(this).scrollTop() > 250) {
+                    $('#top').fadeIn(300);
+                } else {
+                    $('#top').fadeOut(300);
+                }
+            });
+        });
+        })(jQuery);
+      </script>
+      <script src="js/basic_javascript.js"></script>
+  </body>
+</html>
