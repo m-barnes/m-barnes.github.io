@@ -62,8 +62,6 @@
           <p><img src="images/singlealternative.PNG" alt="image of a single alternative flow chart" class="img_small"/></p>
           <p>Sometimes you might have two options. This is called a binary decision, which looks like this:</p>
           <p><img src="images/binarydecision.PNG" alt="image of a binary decision flow chart" class="img_small"/></p>
-          <p>Sometimes you have more than two options. These are called switch statements, but you might also see them referred to as case statements. In these instances, we're not so much asking a yes/no question, but more like asking for a value and then comparing that value against a list of predefined values, or 'cases' for a match to determine the path. On the off chance that the value, or expression provided doesn't match any of our predefined values, we must include a default case, which enables us to 'break' out of the condtional statement and keep the program running along  .</p>
-          <p><img src="images/switch.PNG" alt="image of a switch statement" class="img_small"/></p>
           <h4>Syntax</h4>
           <p>Our mechanism for handling conditional statements in JavaScript is the if/else statement. There are, of course, others, but this one is the most common, so, we're going to start there.</p>
           <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> hour <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #007020">Date</span>().getHours();
@@ -112,7 +110,66 @@
             </ul>
           </p>
           <h4>Honorable mention: the switch statement</h4>
-          <p>
+          <p>So, what do you do if you have multiple options and you don't want to bother with nested if/else selection statements? JavaScript provides another selection statement called the switch statement, but you might also see them referred to as case statements. They're structured a bit differently and are used with a slightly different purpose, or focus. In these instances, we're not so much asking a yes/no question, but more like asking for a value and then comparing that value against a list of predefined values, or 'cases' for a match to determine the path. On the off chance that the value, or expression provided doesn't match any of our predefined values, we must include a default case, which enables us to 'break' out of the condtional statement and keep the program running along  .</p>
+          <p><img src="images/switch.PNG" alt="image of a switch statement" class="img_small"/></p>
+          <p>As example...</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">switch</span> (<span style="color: #008800; font-weight: bold">new</span> <span style="color: #007020">Date</span>().getDay()) {
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Sunday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Monday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Tuesday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Wednesday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Thursday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Friday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">6</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Saturday&quot;</span>;
+}
+</pre></p>
+        <p>We're going to use the Date() again, but this time we're going to extend that method to get the day of the week using the getDay().
+          <ul>
+            <li>'switch' is our keyword. The content of the parenthesis that follow will be our expression to evaluate. In this case, I'm polling the system to get the date and return the numeric value of the current day of the week (e.g. 0 for Sunday--as arrays start at index 0, 1 for Monday, 2 for Tuesday, etc.).</li>
+            <li>The program takes that value and then compares it with a series of 'case' statements. Once a match is found the associated block of code will execute, setting the variable 'day' to the appropriate value.</li>
+            <li>After the code block is executed, the program will 'break' out of the switch block and carry on with any attached, or following code.</li>
+          </ul>
+        </p>
+        <p>There is something I kind of want to mention here real quick that is kind of important. This particular program doesn't require a 'default' statement. Since I'm polling the system and the system always provides exactly what I'm looking for, I know that the returned value from my getDay() is always, always, always going to be a number in the range of 0-6. Consequently, I don't need a default statement to handle input values outside that range, right? Users are unreliable, at best, and malicious, at worst. If I were polling the user to provide that data, chances are, at some point with one of them, I would get an unworkable value, right? When I got that unworkable value, I would have to have some mechanism in place to deal with that lest the program crash horrifically. This means I need a default statement to handle any instances where the result of the evaluated expression does not match any supplied case statement. If you're feeling particularly careful (i.e. paranoid), you might want to include a default statement no matter what and while it is encouraged to use them, especially if the source of your data is 'unreliable,' they are not required programmatically.</p>
+        <p>If the code block to execute is the same for more than one case statement, you can stack case statements accordingly to reflect that.</p>
+        <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">switch</span> (<span style="color: #008800; font-weight: bold">new</span> <span style="color: #007020">Date</span>().getDay()) {
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">:</span>
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">6</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;weekend&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Monday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Tuesday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Wednesday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Thursday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Friday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+}
+</pre></p>
+         
+
+
 
 
 
