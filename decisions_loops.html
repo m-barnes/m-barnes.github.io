@@ -33,10 +33,10 @@
         <hr />
         <h5>Objectives</h5>
               <ul>
-                <li>Define JavaScript and summarize its place in context of modern frontend programming</li>
-                <li>Define 'variable' and explain its purpose and use in JavaScript</li>
-                <li>Analyze and summarize variable naming conventions, variable declaration, variable data types, and operators.</li>
-                <li>Compare and contrast diffent 'events'</li>
+                <li>Explain selection and iteration statements and their purpose in the context of the programming paradigm.</li>
+                <li>Analyze the different conditional and looping variants and summarize their specific uses and contexts.</li>
+                <li>Compare and contrast the different methods of conditonal statements (e.g if/else, if/then, switch statements) and iteration (e.g. looping variants and recursion).</li>
+                <li>Extend existing JavaScript knowledge and demonstrate ability by employing conditonals and iteration in original work.</li>
               </ul><hr/>
         <h5>Terms</h5>
               <ul>
@@ -318,20 +318,32 @@ recursiveFunction()
         'recursiveFunction()'</em></p>
         <p>It seems counterintuitive, but this is recursion in JavaScript and one of the foundations of functional programming.</p>
         <p>Let's look at our factorial code this time in a recursion-friendly format.</p>
-        <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> fact(n){
-     <span style="color: #008800; font-weight: bold">if</span>(n<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span>) {
+        <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> testFunction(){
+  <span style="color: #008800; font-weight: bold">var</span> number<span style="color: #333333">=</span><span style="color: #007020">parseInt</span>(prompt(<span style="background-color: #fff0f0">&quot;Please enter a number for the factorial:\n(decimal numbers will be rounded down.) &quot;</span>));
+  <span style="color: #008800; font-weight: bold">try</span>{
+      <span style="color: #008800; font-weight: bold">var</span> fact <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(n){
+          <span style="color: #008800; font-weight: bold">if</span>(n<span style="color: #333333">===</span><span style="color: #0000DD; font-weight: bold">1</span>) {
           <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span>;
-     }
-     <span style="color: #008800; font-weight: bold">else</span> {
+          }
+         <span style="color: #008800; font-weight: bold">else</span> {
           <span style="color: #008800; font-weight: bold">return</span> n<span style="color: #333333">*</span>fact(n<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>);
-     }
+         }
+      }
+       <span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;The factorial of &quot;</span> <span style="color: #333333">+</span> number <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; is &quot;</span> <span style="color: #333333">+</span>fact(number)
+  }
+  <span style="color: #008800; font-weight: bold">catch</span>(err) {
+    alert(<span style="background-color: #fff0f0">&quot;Please enter a whole, positive number.&quot;</span>)
+    testFunction()
+    }
 }
 
-<span style="color: #008800; font-weight: bold">var</span> number<span style="color: #333333">=</span><span style="color: #007020">parseInt</span>(prompt(<span style="background-color: #fff0f0">&quot;Please enter a number to factor: &quot;</span>))
-
-<span style="color: #007020">document</span>.write(<span style="background-color: #fff0f0">&quot;The factorial of &quot;</span> <span style="color: #333333">+</span> number <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; is &quot;</span> <span style="color: #333333">+</span>fact(number))
+testFunction()
 </pre></p>
-          <p>Can you figure out what's going on? It looks complicated, but it'll lie to you.
+
+
+
+
+          <p>Can you figure out what's going on? It looks complicated, but it'll lie to you. I've got some error catching code there to ensure that the factorial code only runs if a number is input. I could break that down further to include a specific error message for decimal numbers, but decided a warning message in the prompt box was probably enough. I've also packaged the entire thing in a function, or method, wrapper of sorts to keep everything nice, organized, and all variables local. You might also notice that I have both a function expression and a function declaration. To avoid issues of scope (not there would be in such a simple method) it's best not to have function declarations inside other function declarations. This particular program works regardless, but my editor threw a warning and I--like the good, little programmer I am--listened.
             <ul>
               <li>I'm gathering a number from the user and storing it in a variable named, number.</li>
               <li>I'm then outputting a statement where, in part of it, I pass that variable as an argument to a function called 'fact.'</li>
@@ -343,6 +355,7 @@ recursiveFunction()
           </p>
           <p>Here's a visual:</p>
           <p><img src="images/recursion.PNG" alt="image of a recursion flow chart for a factorial"/></p>
+          <p>Looping and recursion are really two sides of the same coin (e.g. iteration). My brain digs recursion a bit more, so, for me, it's a bit easier to understand, but your mileage may vary. Again, programming is a highly personalized thing, right? As long as it works in the context it should, do it how you like to do it. Programming is hard enough without having to force yourself to think and code in ways that seem unnatural.</p>
           <h4>A final...final word on iteration</h4>
           <p>And that's it for iteration. Well...mostly.</p>
           <p>In fact, we're largely done with JavaScript programming. Next time we'll talk about libraries and frameworks where we'll touch briefly on it and then we're finished.</p>
