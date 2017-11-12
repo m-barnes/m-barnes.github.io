@@ -48,6 +48,9 @@ hr {
 
 .img_small {
    width:auto;
+   margin-left:auto;
+   margin-right:auto;
+   display:block;
  }
 
  img {
@@ -88,6 +91,11 @@ hr {
 
  .greenText {
 	 color: #27AE60;
+   font-weight:bold;
+ }
+
+ .redText {
+   color: #ff0000;
    font-weight:bold;
  }
 
