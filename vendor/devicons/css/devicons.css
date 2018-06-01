@@ -1,5 +1,5 @@
-/*!
- *  Devicons 1.8.0 made by Theodore Vorillas / http://vorillaz.com 
+
+ *  Devicons 1.8.0 made by Theodore Vorillas / http://vorillaz.com
  */
 @font-face {
   font-family: 'devicons';
@@ -20,6 +20,11 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.devicons-generic{
+  content: "\e602"
+  font-size:"x-small"
 }
 
 .devicons-git:before {
