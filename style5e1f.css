@@ -47,7 +47,8 @@ body {
   margin-bottom: 20px;
 }
 .header .email,
-.header .phone {
+.header .phone,
+.header .website {
   color: #999;
   font-weight: 300;
 }
