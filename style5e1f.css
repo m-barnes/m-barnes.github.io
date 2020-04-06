@@ -10,7 +10,7 @@ html {
 
 body {
   min-height: 100%;
-  background: #eee;
+  background: #d4d4d4;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   color: #222;
@@ -154,4 +154,18 @@ body {
 
 .icons {
   font-size:3rem;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000000;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
 }
