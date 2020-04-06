@@ -67,6 +67,10 @@ body {
 .details {
   line-height: 20px;
 }
+
+.details .desc {
+  margin-bottom:10px;
+}
 .details .section {
   margin-bottom: 40px;
 }
